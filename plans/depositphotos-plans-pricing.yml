@@ -1,0 +1,93 @@
+name: Depositphotos API Plans & Pricing
+description: >-
+  Depositphotos offers tiered API plans ranging from a free basic tier for
+  testing through intermediate and advanced monthly subscription tiers to a
+  custom enterprise option. All plans provide access to the API endpoints;
+  the tiers differ by the number of licensed downloads allowed, the image
+  collection size, and available features such as SuperSize and Reverse Image
+  Search.
+url: https://depositphotos.com/api-plans.html
+plans:
+  - name: Free Basic
+    description: >-
+      No-cost tier for testing the API. Provides access to 50,000 free images
+      and watermarked preview capability across 331 million images. Includes
+      advanced search features. No commercial download credits are included.
+    price: 0
+    currency: USD
+    per: month
+    features:
+      - Access to 50,000 free images
+      - Watermarked preview of 331M+ images
+      - Advanced search
+      - API key access for testing
+  - name: Intermediate
+    description: >-
+      Most popular paid API plan. Provides unlimited downloads from Depositphotos'
+      curated 500,000 premium image collection. Includes SuperSize high-resolution
+      downloads and Reverse Image Search.
+    price: 1000
+    currency: USD
+    per: month
+    features:
+      - Unlimited downloads from 500K premium collection
+      - SuperSize high-resolution downloads
+      - Reverse Image Search
+      - Advanced search
+  - name: Advanced 75
+    description: >-
+      Advanced plan allowing up to 75 licensed downloads per month from the full
+      331 million image library.
+    price: 249
+    currency: USD
+    per: month
+    features:
+      - 75 licensed downloads/month
+      - Full 331M image library
+      - SuperSize
+      - Reverse Image Search
+      - Advanced search
+  - name: Advanced 150
+    description: >-
+      Advanced plan allowing up to 150 licensed downloads per month from the full
+      331 million image library.
+    price: 399
+    currency: USD
+    per: month
+    features:
+      - 150 licensed downloads/month
+      - Full 331M image library
+      - SuperSize
+      - Reverse Image Search
+      - Advanced search
+  - name: Advanced 500
+    description: >-
+      Advanced plan allowing up to 500 licensed downloads per month from the full
+      331 million image library.
+    price: 699
+    currency: USD
+    per: month
+    features:
+      - 500 licensed downloads/month
+      - Full 331M image library
+      - SuperSize
+      - Reverse Image Search
+      - Advanced search
+  - name: Enterprise
+    description: >-
+      Custom enterprise plan with pricing negotiated directly with Depositphotos
+      sales. Provides unlimited downloads from the premium collection, watermark-free
+      previews, custom branding options, full feature access, and dedicated support.
+      Supports both prepaid (balance-based) and postpaid (monthly invoiced) billing.
+    price: custom
+    currency: USD
+    per: month
+    features:
+      - Unlimited downloads from premium collection
+      - Watermark-free previews
+      - Custom branding
+      - Prepaid and postpaid billing options
+      - Invoice management via API
+      - License transfer capabilities
+      - Dedicated enterprise support
+      - AI Image Generation access

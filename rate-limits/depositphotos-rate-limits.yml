@@ -1,0 +1,57 @@
+name: Depositphotos API Rate Limits
+description: >-
+  Depositphotos does not publish explicit numeric rate limits (requests per
+  second/minute/day) in their public documentation. The primary throttling
+  mechanism is session-based: each session token issued at login is valid for
+  three hours, after which a new login call must be made. Download quotas are
+  governed by the purchased plan tier rather than by API call frequency. For
+  enterprise customers, usage is tracked against prepaid balance or monthly
+  postpaid invoices.
+url: https://api.depositphotos.com/doc/
+limits:
+  - name: Session Validity
+    description: >-
+      Session identifiers (dp_sessionid) returned by the login endpoint remain
+      valid for three hours. Clients should implement automatic re-login every
+      three hours to maintain uninterrupted API access.
+    value: 3
+    unit: hours
+    scope: session
+  - name: Download Quota — Advanced 75
+    description: Maximum licensed downloads per month on the Advanced 75 plan.
+    value: 75
+    unit: downloads
+    per: month
+    scope: plan
+  - name: Download Quota — Advanced 150
+    description: Maximum licensed downloads per month on the Advanced 150 plan.
+    value: 150
+    unit: downloads
+    per: month
+    scope: plan
+  - name: Download Quota — Advanced 500
+    description: Maximum licensed downloads per month on the Advanced 500 plan.
+    value: 500
+    unit: downloads
+    per: month
+    scope: plan
+  - name: Download Quota — Intermediate
+    description: >-
+      Unlimited downloads from the 500K premium collection on the Intermediate
+      plan; no monthly download cap is applied.
+    value: unlimited
+    unit: downloads
+    per: month
+    scope: plan
+  - name: Download Quota — Enterprise
+    description: >-
+      Unlimited downloads from the premium collection on the Enterprise plan;
+      usage tracked for invoicing purposes.
+    value: unlimited
+    unit: downloads
+    per: month
+    scope: plan
+notes: >-
+  Specific request-rate limits (RPM/RPS) are not publicly documented. Clients
+  experiencing throttling should implement exponential back-off and contact
+  Depositphotos support for plan-specific guidance.

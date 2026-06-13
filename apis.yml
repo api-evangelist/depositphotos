@@ -1,0 +1,111 @@
+aid: depositphotos
+name: Depositphotos
+description: >-
+  Depositphotos is a stock photo, vector, and video marketplace offering a REST
+  API for searching and downloading images, managing subscriptions, lightboxes,
+  and contributor portfolios. The API supports Partner and Reseller programs,
+  an Enterprise solution with advanced licensing and invoicing, and an AI Suite
+  for generative image creation and graphic editing. All API calls use HTTP
+  GET/POST requests with JSON responses and session-based authentication.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/depositphotos/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Stock Photos
+  - Images
+  - Videos
+  - Vectors
+  - Media
+  - Creative Assets
+  - Generative AI
+apis:
+  - aid: depositphotos:depositphotos-partner-api
+    name: Depositphotos Partner API
+    description: >-
+      The Partner API enables registered members to search the Depositphotos
+      catalog of 331M+ assets, preview files, and earn referral revenue from
+      stock file sales. Supports image search with 30+ filter parameters,
+      lightbox management, and session-based authentication with a three-hour
+      session lifetime.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://api.depositphotos.com/doc/
+    baseURL: https://api.depositphotos.com
+    tags:
+      - Stock Photos
+      - Images
+      - Partner
+      - Search
+      - Referral
+    properties:
+      - type: Documentation
+        url: https://api.depositphotos.com/doc/
+      - type: OpenAPI
+        url: https://api.depositphotos.com/doc/
+  - aid: depositphotos:depositphotos-enterprise-api
+    name: Depositphotos Enterprise API
+    description: >-
+      The Enterprise API provides organizations with full content licensing
+      workflows including searching 331M+ assets, licensing items, invoice
+      management, license transfer, complimentary downloads, and AI image
+      generation. Supports both prepaid (balance-based) and postpaid (monthly
+      invoiced) payment models. All calls use HTTPS with JSON responses and
+      three-hour session tokens.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://enterprise-api-doc.readthedocs.io/
+    baseURL: https://api.depositphotos.com
+    tags:
+      - Enterprise
+      - Licensing
+      - Stock Photos
+      - AI Image Generation
+      - Invoicing
+    properties:
+      - type: Documentation
+        url: https://enterprise-api-doc.readthedocs.io/
+  - aid: depositphotos:depositphotos-suite-api
+    name: Depositphotos Suite API
+    description: >-
+      The Depositphotos Suite API bundles a graphic design editor, access to the
+      331M+ stock library, and generative AI tools (AI Assistant, AI Image
+      Generator) into a single integration point for embedding creative
+      capabilities into third-party applications.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://api.depositphotos.com/suite/api-reference/vista-create-editor
+    baseURL: https://api.depositphotos.com/suite
+    tags:
+      - Graphic Editor
+      - AI Generation
+      - Suite
+      - Creative Tools
+    properties:
+      - type: Documentation
+        url: https://api.depositphotos.com/suite/api-reference/vista-create-editor
+common:
+  - type: Website
+    url: https://depositphotos.com
+  - type: Documentation
+    url: https://api.depositphotos.com/doc/
+  - type: GitHubOrg
+    url: https://github.com/depositphotos
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/depositphotos
+  - type: Blog
+    url: https://blog.depositphotos.com
+  - type: Pricing
+    url: https://depositphotos.com/api-plans.html
+  - type: StatusPage
+    url: https://depositphotos.com/status
+  - type: X
+    url: https://x.com/depositphotos
+  - type: Plans
+    url: plans/depositphotos-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/depositphotos-rate-limits.yml
+  - type: FinOps
+    url: finops/depositphotos-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

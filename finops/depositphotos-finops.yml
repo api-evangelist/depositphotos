@@ -1,0 +1,83 @@
+name: Depositphotos API FinOps
+description: >-
+  Financial operations guidance for managing Depositphotos API costs. The API
+  is priced around licensed download volumes and plan tiers. Enterprise accounts
+  can choose between a prepaid balance model (pay in advance, deducted per
+  download) or a postpaid model (monthly invoice based on actual usage).
+  Careful selection of plan tier and monitoring of download consumption are the
+  primary cost-control levers.
+url: https://depositphotos.com/api-plans.html
+billing:
+  models:
+    - name: Monthly Subscription
+      description: >-
+        Fixed monthly fee tied to a specific download quota (Intermediate,
+        Advanced 75/150/500). Cost is predictable; unused downloads do not
+        roll over.
+      applicablePlans:
+        - Intermediate
+        - Advanced 75
+        - Advanced 150
+        - Advanced 500
+    - name: Enterprise Prepaid
+      description: >-
+        Organization funds an account balance; each licensed download deducts
+        from the balance. Suitable for variable download volumes. Requires
+        monitoring balance to avoid service interruption.
+      applicablePlans:
+        - Enterprise
+    - name: Enterprise Postpaid
+      description: >-
+        Downloads are tracked and invoiced at the end of each month. Requires
+        invoicing setup via the createEnterpriseInvoice API endpoint. Best for
+        organizations that need net-30/60 payment terms.
+      applicablePlans:
+        - Enterprise
+costDrivers:
+  - name: Licensed Downloads
+    description: >-
+      The primary cost driver. Each file licensed via the licenseItem API
+      endpoint consumes one download credit or deducts from the prepaid balance.
+  - name: Plan Tier Selection
+    description: >-
+      Choosing a plan that exceeds actual download needs results in wasted
+      spend. Align the plan tier to historical or projected monthly download
+      volume.
+  - name: Extended License Options
+    description: >-
+      The Enterprise API supports extended license types including unlimited
+      print runs, multi-seat licenses, and transfer rights. These options carry
+      additional cost above the base license and should only be applied when
+      contractually required.
+  - name: AI Image Generation
+    description: >-
+      The imageGenerator endpoints (available on Enterprise and Suite plans) may
+      incur separate usage charges. Confirm pricing with Depositphotos sales
+      before enabling generative workflows at scale.
+optimizationTips:
+  - tip: Right-size the plan
+    detail: >-
+      Audit actual monthly download counts quarterly and downgrade or upgrade
+      the plan to match consumption. The Advanced tiers are significantly
+      cheaper than the Intermediate flat-rate plan for volumes under 500
+      downloads per month.
+  - tip: Cache search results
+    detail: >-
+      The Partner and Enterprise search endpoints can be called frequently
+      during user sessions. Cache search result metadata (not licensed files)
+      to reduce API call volume and latency.
+  - tip: Monitor session tokens
+    detail: >-
+      Sessions expire after three hours. Unnecessary re-logins add latency and
+      minor overhead. Implement token refresh logic to reuse sessions for their
+      full three-hour lifetime.
+  - tip: Use complimentary downloads for QA
+    detail: >-
+      The complimentaryDownload and getGroupCompDownloads endpoints provide free
+      high-resolution test samples. Use these for integration testing to avoid
+      consuming licensed download credits.
+  - tip: Track enterprise invoices via API
+    detail: >-
+      Use the getEnterpriseInvoice and getEnterpriseInvoiceList endpoints to
+      programmatically reconcile download costs against budget allocations each
+      month rather than relying on manual invoice review.
