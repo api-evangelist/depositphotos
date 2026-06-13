@@ -1,0 +1,23 @@
+{
+  "title": "License a Media Item (Enterprise)",
+  "description": "Example of licensing a stock photo via the Enterprise API",
+  "request": {
+    "method": "POST",
+    "url": "https://api.depositphotos.com/",
+    "body": {
+      "dp_command": "licenseItem",
+      "dp_apikey": "YOUR_ENTERPRISE_API_KEY",
+      "dp_session_id": "YOUR_SESSION_ID",
+      "dp_media_id": 12345678,
+      "dp_license_id": "standard_editorial"
+    }
+  },
+  "response": {
+    "timestamp": "2026-06-13 10:30:00",
+    "version": "1.3",
+    "type": "success",
+    "downloadLink": "https://downloads.depositphotos.com/secure/12345678?token=abc123",
+    "licenseId": "LIC-2026-0613-9876",
+    "method": "postpaid"
+  }
+}

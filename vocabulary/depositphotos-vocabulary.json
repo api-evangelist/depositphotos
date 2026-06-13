@@ -1,0 +1,140 @@
+{
+  "title": "Depositphotos API Vocabulary",
+  "description": "Domain-specific terms and concepts used in the Depositphotos API",
+  "version": "1.0",
+  "source": "https://api.depositphotos.com/doc/",
+  "terms": [
+    {
+      "term": "dp_apikey",
+      "definition": "The developer API key issued upon registration with Depositphotos. Required for all API calls.",
+      "type": "parameter"
+    },
+    {
+      "term": "dp_command",
+      "definition": "The name of the API method to invoke. All Depositphotos API calls use a single endpoint and specify the operation via this parameter.",
+      "type": "parameter"
+    },
+    {
+      "term": "dp_session_id",
+      "definition": "Session token returned by login or loginEnterprise. Valid for three hours. Required for user-authenticated operations.",
+      "type": "parameter"
+    },
+    {
+      "term": "session",
+      "definition": "An authenticated API session established by calling login or loginEnterprise. Sessions expire after three hours.",
+      "type": "concept"
+    },
+    {
+      "term": "Partner API",
+      "definition": "API access tier for members who search the Depositphotos catalog and earn referral revenue when users purchase via Depositphotos.",
+      "type": "product"
+    },
+    {
+      "term": "Reseller API",
+      "definition": "API access tier that allows selling Depositphotos files directly on third-party websites at custom pricing.",
+      "type": "product"
+    },
+    {
+      "term": "Enterprise API",
+      "definition": "API access tier for corporate clients requiring full licensing workflows, invoice management, license transfer, and AI image generation.",
+      "type": "product"
+    },
+    {
+      "term": "Suite API",
+      "definition": "API bundle combining graphic design editor (VistaCreate), the 331M+ stock library, and generative AI tools for embedding creative capabilities.",
+      "type": "product"
+    },
+    {
+      "term": "lightbox",
+      "definition": "A named collection of media items curated by a user, similar to a folder or board. Can be public or private.",
+      "type": "resource"
+    },
+    {
+      "term": "license",
+      "definition": "The legal right to use a purchased media item according to specific terms. Depositphotos offers standard and extended licenses.",
+      "type": "resource"
+    },
+    {
+      "term": "licenseId",
+      "definition": "A unique identifier for a specific license transaction, used for redownloading, transferring, or auditing usage.",
+      "type": "field"
+    },
+    {
+      "term": "mediatype",
+      "definition": "The category of a stock asset: image (photograph), vector (illustration), or video (footage).",
+      "type": "field",
+      "values": ["image", "vector", "video"]
+    },
+    {
+      "term": "prepaid",
+      "definition": "Enterprise payment model where credits are purchased in advance and deducted per download.",
+      "type": "concept"
+    },
+    {
+      "term": "postpaid",
+      "definition": "Enterprise payment model where usage is tracked monthly and invoiced at the end of the billing period.",
+      "type": "concept"
+    },
+    {
+      "term": "complimentaryDownload",
+      "definition": "A free high-resolution test download available to Enterprise API clients for evaluation purposes.",
+      "type": "concept"
+    },
+    {
+      "term": "imageGenerator",
+      "definition": "The Depositphotos AI image generation service that creates stock-ready images from text prompts.",
+      "type": "service"
+    },
+    {
+      "term": "subaccount",
+      "definition": "A child account under a Reseller API account, representing an end customer with their own balance and download history.",
+      "type": "resource"
+    },
+    {
+      "term": "dp_search_limit",
+      "definition": "Maximum number of search results to return in a single request. Maximum value is 200.",
+      "type": "parameter",
+      "maxValue": 200
+    },
+    {
+      "term": "dp_search_offset",
+      "definition": "Zero-based offset for paginating through search results.",
+      "type": "parameter"
+    },
+    {
+      "term": "tagCloud",
+      "definition": "A set of 30 popular search queries with relative popularity ratings on a 1-10 scale.",
+      "type": "resource"
+    },
+    {
+      "term": "series",
+      "definition": "A group of related stock images shot together by the same photographer in the same context.",
+      "type": "resource"
+    },
+    {
+      "term": "invoice",
+      "definition": "A billing document generated from licensing transactions for Enterprise postpaid clients.",
+      "type": "resource"
+    },
+    {
+      "term": "AI Suite",
+      "definition": "Depositphotos product bundle including AI Image Generator, AI Assistant, and graphic design editor for generative creative workflows.",
+      "type": "product"
+    },
+    {
+      "term": "downloadLink",
+      "definition": "A time-limited URL returned by getMedia or reDownload that allows downloading the licensed high-resolution file.",
+      "type": "field"
+    },
+    {
+      "term": "dp_media_option",
+      "definition": "The resolution/size option for a media purchase (e.g., s, m, l, xl, xxl, xxxl, el, vect).",
+      "type": "parameter"
+    },
+    {
+      "term": "dp_media_license",
+      "definition": "The license type to apply when purchasing a media item (standard or extended).",
+      "type": "parameter"
+    }
+  ]
+}

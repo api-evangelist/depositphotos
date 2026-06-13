@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api.depositphotos.com/schema/media-item",
+  "title": "MediaItem",
+  "description": "A Depositphotos stock media item (photo, vector, or video)",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Unique media item identifier"
+    },
+    "title": {
+      "type": "string",
+      "description": "Item title"
+    },
+    "description": {
+      "type": "string",
+      "description": "Item description"
+    },
+    "width": {
+      "type": "integer",
+      "description": "Image width in pixels"
+    },
+    "height": {
+      "type": "integer",
+      "description": "Image height in pixels"
+    },
+    "author": {
+      "type": "string",
+      "description": "Contributor username"
+    },
+    "userid": {
+      "type": "integer",
+      "description": "Contributor user ID"
+    },
+    "thumbnail": {
+      "type": "string",
+      "format": "uri",
+      "description": "Thumbnail image URL"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Preview URL"
+    },
+    "mp": {
+      "type": "number",
+      "description": "Image resolution in megapixels"
+    },
+    "status": {
+      "type": "string",
+      "description": "Item status (e.g., active)"
+    },
+    "mediatype": {
+      "type": "string",
+      "enum": ["image", "vector", "video"],
+      "description": "Type of media"
+    },
+    "categories": {
+      "type": "array",
+      "description": "Categories this item belongs to",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Category identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "Category name"
+          }
+        },
+        "required": ["id", "name"]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Keywords/tags associated with the item",
+      "items": {
+        "type": "string"
+      }
+    },
+    "similar": {
+      "type": "array",
+      "description": "IDs of visually similar items",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "series": {
+      "type": "array",
+      "description": "IDs of items in the same series",
+      "items": {
+        "type": "integer"
+      }
+    },
+    "updated": {
+      "type": "string",
+      "description": "Last update timestamp"
+    },
+    "nudity": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Whether item contains nudity"
+    },
+    "orientation": {
+      "type": "string",
+      "enum": ["horizontal", "vertical", "square"],
+      "description": "Image orientation"
+    },
+    "itype": {
+      "type": "string",
+      "description": "Image type"
+    },
+    "filesize": {
+      "type": "integer",
+      "description": "File size in bytes"
+    },
+    "published": {
+      "type": "string",
+      "description": "Publication timestamp"
+    }
+  },
+  "required": ["id", "mediatype"]
+}

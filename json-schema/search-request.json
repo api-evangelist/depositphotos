@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api.depositphotos.com/schema/search-request",
+  "title": "SearchRequest",
+  "description": "Parameters for searching Depositphotos stock asset catalog",
+  "type": "object",
+  "required": ["dp_apikey", "dp_command"],
+  "properties": {
+    "dp_command": {
+      "type": "string",
+      "enum": ["search"],
+      "description": "API command identifier"
+    },
+    "dp_apikey": {
+      "type": "string",
+      "description": "API key issued to the registered developer"
+    },
+    "dp_session_id": {
+      "type": "string",
+      "description": "Session identifier (optional for search)"
+    },
+    "dp_search_query": {
+      "type": "string",
+      "description": "Search query text (at least one of query, user, or username required)"
+    },
+    "dp_search_user": {
+      "type": "string",
+      "description": "Filter by contributor user ID"
+    },
+    "dp_search_username": {
+      "type": "string",
+      "description": "Filter by contributor username"
+    },
+    "dp_search_limit": {
+      "type": "integer",
+      "description": "Number of results per page",
+      "minimum": 1,
+      "maximum": 200,
+      "default": 100
+    },
+    "dp_search_offset": {
+      "type": "integer",
+      "description": "Offset for pagination",
+      "minimum": 0,
+      "default": 0
+    },
+    "dp_search_photo": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Include photographs (1=yes, 0=no)"
+    },
+    "dp_search_vector": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Include vector illustrations (1=yes, 0=no)"
+    },
+    "dp_search_video": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Include video clips (1=yes, 0=no)"
+    },
+    "dp_search_nudity": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Include adult content (1=yes, 0=no)"
+    },
+    "dp_search_imagesize": {
+      "type": "string",
+      "enum": ["s", "m", "l", "xl", "xxl", "xxxl"],
+      "description": "Minimum image size filter"
+    },
+    "dp_search_orientation": {
+      "type": "string",
+      "enum": ["horizontal", "vertical", "square"],
+      "description": "Orientation filter"
+    },
+    "dp_search_color": {
+      "type": "string",
+      "description": "Dominant color filter (hex without #, e.g. ff0000)"
+    },
+    "dp_search_sort": {
+      "type": "string",
+      "enum": ["best_match", "newest", "popular", "undiscovered"],
+      "description": "Sort order for results",
+      "default": "best_match"
+    },
+    "dp_lang": {
+      "type": "string",
+      "description": "Language code for localized response content"
+    },
+    "dp_search_correction": {
+      "type": "integer",
+      "enum": [0, 1],
+      "description": "Apply spelling correction to search query (1=yes, 0=no)",
+      "default": 1
+    },
+    "dp_affiliate_id": {
+      "type": "integer",
+      "description": "Affiliate partner identifier for tracking"
+    },
+    "dp_last_update_time": {
+      "type": "string",
+      "description": "Unix timestamp to filter content updated since this time"
+    },
+    "dp_search_gender": {
+      "type": "string",
+      "enum": ["male", "female", "both"],
+      "description": "Filter by depicted subject gender"
+    },
+    "dp_search_age": {
+      "type": "string",
+      "description": "Filter by depicted subject age range"
+    },
+    "dp_search_ethnicity": {
+      "type": "string",
+      "description": "Filter by depicted subject ethnicity"
+    },
+    "dp_search_people": {
+      "type": "integer",
+      "description": "Filter by number of people depicted"
+    },
+    "dp_domain": {
+      "type": "string",
+      "description": "Domain for generating preview URLs"
+    }
+  },
+  "anyOf": [
+    { "required": ["dp_search_query"] },
+    { "required": ["dp_search_user"] },
+    { "required": ["dp_search_username"] }
+  ]
+}

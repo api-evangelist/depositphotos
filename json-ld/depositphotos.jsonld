@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dp": "https://api.depositphotos.com/vocab/",
+    "hydra": "http://www.w3.org/ns/hydra/core#"
+  },
+  "@type": "WebAPI",
+  "@id": "https://api.depositphotos.com",
+  "name": "Depositphotos API",
+  "description": "Stock photo, vector, and video marketplace REST API for searching and downloading media, managing subscriptions, lightboxes, and contributor portfolios. Includes Partner, Reseller, Enterprise, and AI Suite access tiers.",
+  "url": "https://api.depositphotos.com/doc/",
+  "provider": {
+    "@type": "Organization",
+    "name": "Depositphotos",
+    "url": "https://depositphotos.com",
+    "sameAs": [
+      "https://github.com/depositphotos",
+      "https://www.linkedin.com/company/depositphotos",
+      "https://x.com/depositphotos"
+    ]
+  },
+  "documentation": "https://api.depositphotos.com/doc/",
+  "termsOfService": "https://depositphotos.com/api-plans.html",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://depositphotos.com/api-plans.html"
+  },
+  "availableChannel": [
+    {
+      "@type": "ServiceChannel",
+      "name": "Partner API",
+      "serviceUrl": "https://api.depositphotos.com/doc/",
+      "description": "For referral partners searching the stock catalog and earning revenue"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "Enterprise API",
+      "serviceUrl": "https://enterprise-api-doc.readthedocs.io/",
+      "description": "For corporate clients with full licensing, invoicing, and AI generation workflows"
+    },
+    {
+      "@type": "ServiceChannel",
+      "name": "Suite API",
+      "serviceUrl": "https://api.depositphotos.com/suite/api-reference/vista-create-editor",
+      "description": "For embedding graphic design editor and generative AI tools"
+    }
+  ],
+  "category": [
+    "Stock Photography",
+    "Digital Media",
+    "Creative Assets",
+    "Generative AI",
+    "Image Licensing"
+  ],
+  "softwareVersion": "1.3",
+  "encodingFormat": "application/json",
+  "dp:authMethod": "Session-based API key authentication",
+  "dp:sessionDuration": "PT3H",
+  "dp:catalogSize": "331M+ assets",
+  "dp:assetTypes": ["photograph", "vector", "video"],
+  "dp:paymentModels": ["prepaid", "postpaid", "subscription", "on-demand"],
+  "potentialAction": [
+    {
+      "@type": "SearchAction",
+      "name": "search",
+      "description": "Search the Depositphotos asset catalog with 40+ filter parameters",
+      "target": "https://api.depositphotos.com/?dp_command=search"
+    },
+    {
+      "@type": "Action",
+      "name": "login",
+      "description": "Authenticate to receive a session token",
+      "target": "https://api.depositphotos.com/?dp_command=login"
+    },
+    {
+      "@type": "Action",
+      "name": "getMedia",
+      "description": "Purchase and download a licensed media item",
+      "target": "https://api.depositphotos.com/?dp_command=getMedia"
+    },
+    {
+      "@type": "Action",
+      "name": "imageGenerator.generate",
+      "description": "Generate an AI image from a text prompt",
+      "target": "https://api.depositphotos.com/?dp_command=imageGenerator.generate"
+    }
+  ]
+}

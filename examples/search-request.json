@@ -1,0 +1,49 @@
+{
+  "title": "Search for Stock Photos",
+  "description": "Example search request for stock photography of women in business settings",
+  "request": {
+    "method": "POST",
+    "url": "https://api.depositphotos.com/",
+    "body": {
+      "dp_command": "search",
+      "dp_apikey": "YOUR_API_KEY",
+      "dp_session_id": "YOUR_SESSION_ID",
+      "dp_search_query": "woman business",
+      "dp_search_photo": 1,
+      "dp_search_vector": 0,
+      "dp_search_video": 0,
+      "dp_search_limit": 20,
+      "dp_search_offset": 0,
+      "dp_search_orientation": "horizontal",
+      "dp_search_sort": "best_match",
+      "dp_search_nudity": 0
+    }
+  },
+  "response": {
+    "timestamp": "2026-06-13 10:30:00",
+    "version": "1.3",
+    "type": "success",
+    "count": 125000,
+    "result": [
+      {
+        "id": 12345678,
+        "title": "Business woman in office",
+        "width": 6000,
+        "height": 4000,
+        "author": "photographer123",
+        "userid": 987654,
+        "thumbnail": "https://st.depositphotos.com/1234567/1234/i/380/depositphotos_12345678-stock-photo-business-woman-office.jpg",
+        "url": "https://st.depositphotos.com/1234567/1234/i/950/depositphotos_12345678-stock-photo-business-woman-office.jpg",
+        "mp": 24.0,
+        "status": "active",
+        "mediatype": "image",
+        "orientation": "horizontal",
+        "categories": [
+          { "id": 963, "name": "Business" },
+          { "id": 1, "name": "People" }
+        ],
+        "tags": ["woman", "business", "office", "professional", "corporate"]
+      }
+    ]
+  }
+}
