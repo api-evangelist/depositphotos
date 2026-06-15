@@ -1,6 +1,6 @@
 {
   "url": "https://blog.depositphotos.com/",
-  "fetched": "2026-06-13",
+  "fetched": "2026-06-14T20:42:17Z",
   "posts": [
     {
       "title": "Meet Nano Banana: Unlock More Creative Power in the DepositPhotos AI Image Generator",
@@ -52,5 +52,13 @@
       "url": "https://blog.depositphotos.com/15-cyberpunk-color-palettes-for-dystopian-designs.html",
       "date": "2020-01-27"
     }
-  ]
+  ],
+  "repo": "depositphotos",
+  "feeds": [
+    {
+      "source": "https://www.linkedin.com/company/depositphotos",
+      "error": "HTTPError"
+    }
+  ],
+  "post_count": 0
 }
