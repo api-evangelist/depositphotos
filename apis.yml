@@ -7,7 +7,7 @@ description: >-
   an Enterprise solution with advanced licensing and invoicing, and an AI Suite
   for generative image creation and graphic editing. All API calls use HTTP
   GET/POST requests with JSON responses and session-based authentication.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: >-
   https://raw.githubusercontent.com/api-evangelist/depositphotos/refs/heads/main/apis.yml
 created: '2026-06-13'
@@ -30,7 +30,7 @@ apis:
       stock file sales. Supports image search with 30+ filter parameters,
       lightbox management, and session-based authentication with a three-hour
       session lifetime.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://api.depositphotos.com/doc/
     baseURL: https://api.depositphotos.com
     tags:
@@ -53,7 +53,7 @@ apis:
       generation. Supports both prepaid (balance-based) and postpaid (monthly
       invoiced) payment models. All calls use HTTPS with JSON responses and
       three-hour session tokens.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://enterprise-api-doc.readthedocs.io/
     baseURL: https://api.depositphotos.com
     tags:
@@ -72,7 +72,7 @@ apis:
       331M+ stock library, and generative AI tools (AI Assistant, AI Image
       Generator) into a single integration point for embedding creative
       capabilities into third-party applications.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://api.depositphotos.com/suite/api-reference/vista-create-editor
     baseURL: https://api.depositphotos.com/suite
     tags:
