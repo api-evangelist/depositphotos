@@ -1,0 +1,25 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/depositphotos-enterprise-api.json, openapi/depositphotos-partner-api.json
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: ApiKeyParam
+  type: apiKey
+  in: query
+  parameter: dp_apikey
+  description: API key issued to the registered corporate client
+  sources:
+  - openapi/depositphotos-enterprise-api.json
+  - openapi/depositphotos-partner-api.json
+- name: SessionId
+  type: apiKey
+  in: query
+  parameter: dp_session_id
+  description: Session identifier obtained from loginEnterprise, valid for 3 hours
+  sources:
+  - openapi/depositphotos-enterprise-api.json
+  - openapi/depositphotos-partner-api.json
