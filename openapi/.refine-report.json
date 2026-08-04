@@ -1,0 +1,14 @@
+{
+  "provider": "depositphotos",
+  "sources": [
+    "depositphotos-authentication-api-openapi.yml"
+  ],
+  "outputs": [
+    "depositphotos-authentication-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

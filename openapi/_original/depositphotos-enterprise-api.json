@@ -1,0 +1,270 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Depositphotos Enterprise API",
+    "description": "The Depositphotos Enterprise API provides organizations with full content licensing workflows including searching 331M+ assets, licensing items, invoice management, license transfer, complimentary downloads, and AI image generation. Supports both prepaid (balance-based) and postpaid (monthly invoiced) payment models.",
+    "version": "1.3",
+    "contact": {
+      "url": "https://enterprise-api-doc.readthedocs.io/"
+    },
+    "license": {
+      "name": "Proprietary",
+      "url": "https://depositphotos.com/api-plans.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://api.depositphotos.com",
+      "description": "Depositphotos API production server"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {
+      "BaseResponse": {
+        "type": "object",
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "description": "Response timestamp in YYYY-MM-DD HH:MI:SS format"
+          },
+          "version": {
+            "type": "string",
+            "description": "API version",
+            "example": "1.3"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["success", "failure"],
+            "description": "Response result type"
+          }
+        }
+      },
+      "EnterpriseLoginRequest": {
+        "type": "object",
+        "required": ["dp_apikey", "dp_command", "dp_login_user", "dp_login_password"],
+        "properties": {
+          "dp_command": {
+            "type": "string",
+            "enum": ["loginEnterprise"],
+            "description": "API command identifier"
+          },
+          "dp_apikey": {
+            "type": "string",
+            "description": "API key issued to the registered corporate client"
+          },
+          "dp_login_user": {
+            "type": "string",
+            "description": "Enterprise account username"
+          },
+          "dp_login_password": {
+            "type": "string",
+            "description": "Enterprise account password"
+          }
+        }
+      },
+      "EnterpriseLoginResponse": {
+        "allOf": [
+          { "$ref": "#/components/schemas/BaseResponse" },
+          {
+            "type": "object",
+            "properties": {
+              "sessionid": {
+                "type": "string",
+                "description": "Session identifier valid for 3 hours"
+              }
+            }
+          }
+        ]
+      },
+      "EnterpriseGroupData": {
+        "type": "object",
+        "properties": {
+          "paymentType": {
+            "type": "string",
+            "enum": ["prepaid", "postpaid"],
+            "description": "Group payment model"
+          },
+          "balance": {
+            "type": "number",
+            "description": "Current account balance"
+          },
+          "vatInfo": {
+            "type": "object",
+            "description": "VAT information for the group"
+          }
+        }
+      },
+      "LicenseItem": {
+        "type": "object",
+        "properties": {
+          "licenseId": {
+            "type": "string",
+            "description": "License identifier"
+          },
+          "name": {
+            "type": "string",
+            "description": "License name"
+          },
+          "price": {
+            "type": "number",
+            "description": "License price"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency code"
+          }
+        }
+      },
+      "InvoiceData": {
+        "type": "object",
+        "properties": {
+          "invoiceId": {
+            "type": "string",
+            "description": "Invoice identifier"
+          },
+          "state": {
+            "type": "string",
+            "description": "Invoice state (pending, paid, etc.)"
+          },
+          "amount": {
+            "type": "number",
+            "description": "Invoice amount"
+          },
+          "currency": {
+            "type": "string",
+            "description": "Invoice currency code"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Invoice creation timestamp"
+          }
+        }
+      },
+      "AIGenerationRequest": {
+        "type": "object",
+        "required": ["dp_apikey", "dp_command", "dp_session_id", "prompt"],
+        "properties": {
+          "dp_command": {
+            "type": "string",
+            "enum": ["imageGenerator.generate"],
+            "description": "API command identifier"
+          },
+          "dp_apikey": {
+            "type": "string",
+            "description": "API key"
+          },
+          "dp_session_id": {
+            "type": "string",
+            "description": "Session identifier"
+          },
+          "prompt": {
+            "type": "string",
+            "description": "Text prompt for AI image generation"
+          }
+        }
+      },
+      "AIGenerationResponse": {
+        "allOf": [
+          { "$ref": "#/components/schemas/BaseResponse" },
+          {
+            "type": "object",
+            "properties": {
+              "jobId": {
+                "type": "string",
+                "description": "Generation job identifier"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["pending", "processing", "completed", "failed"],
+                "description": "Generation status"
+              }
+            }
+          }
+        ]
+      },
+      "LicenseTransferRequest": {
+        "type": "object",
+        "required": ["dp_apikey", "dp_command", "dp_session_id", "dp_license_id"],
+        "properties": {
+          "dp_command": {
+            "type": "string",
+            "enum": ["transferEnterpriseLicense"],
+            "description": "API command identifier"
+          },
+          "dp_apikey": {
+            "type": "string",
+            "description": "API key"
+          },
+          "dp_session_id": {
+            "type": "string",
+            "description": "Session identifier"
+          },
+          "dp_license_id": {
+            "type": "string",
+            "description": "License identifier to transfer"
+          },
+          "dp_recipient_email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email of the license recipient"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKeyParam": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "dp_apikey",
+        "description": "API key issued to the registered corporate client"
+      },
+      "SessionId": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "dp_session_id",
+        "description": "Session identifier obtained from loginEnterprise, valid for 3 hours"
+      }
+    }
+  },
+  "x-commands": {
+    "authentication": {
+      "loginEnterprise": "Authenticate enterprise user, returns session ID",
+      "logout": "Close API session"
+    },
+    "user_management": {
+      "getUserEnterpriseGroup": "Get group payment type, balance, and VAT info",
+      "getEnterpriseUserData": "Get account data for group members"
+    },
+    "search": {
+      "search": "Query the 331M+ asset database by phrase, author, color, size, orientation"
+    },
+    "media": {
+      "getMediaData": "Retrieve complete media item information",
+      "complimentaryDownload": "Free high-resolution test download",
+      "getGroupCompDownloads": "Track free downloads over date range"
+    },
+    "ai_generation": {
+      "imageGenerator.generate": "Initiate AI image creation from text prompt",
+      "imageGenerator.get": "Retrieve generation status and item IDs",
+      "imageGenerator.getMediaData": "Fetch metadata for AI-generated images"
+    },
+    "licensing": {
+      "getLicenseOfGroup": "List available licenses with pricing",
+      "licenseItem": "Purchase a file license",
+      "getLicensedItems": "Retrieve user's licensed files",
+      "getTransactionLicenseInfo": "Get license transaction details"
+    },
+    "license_transfer": {
+      "transferEnterpriseLicense": "Transfer license rights to a third party",
+      "getTransferredLicenses": "View transferred license history"
+    },
+    "invoicing": {
+      "createEnterpriseInvoice": "Generate invoice from transactions",
+      "getEnterpriseInvoice": "Retrieve invoice details",
+      "getEnterpriseInvoiceCount": "Count invoices by state",
+      "getEnterpriseInvoiceList": "List invoices with pagination"
+    }
+  }
+}
