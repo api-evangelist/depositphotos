@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Depositphotos Enterprise Authentication API",
+    "version": "1.3"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.depositphotos.com/",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "dp_command",
+                  "value": ""
+                },
+                {
+                  "name": "dp_apikey",
+                  "value": ""
+                },
+                {
+                  "name": "dp_login_user",
+                  "value": ""
+                },
+                {
+                  "name": "dp_login_password",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Authenticate an API client using username and password to receive a session token valid for three hours."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
