@@ -1,7 +1,8 @@
 {
   "provider": "depositphotos",
   "sources": [
-    "depositphotos-authentication-api-openapi.yml"
+    "_original/depositphotos-enterprise-api.json",
+    "_original/depositphotos-partner-api.json"
   ],
   "outputs": [
     "depositphotos-authentication-api-openapi.yml"
@@ -9,6 +10,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "depositphotos-enterprise-api.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "depositphotos-partner-api.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "depositphotos-partner-api.json: declared missing tag: Authentication",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "depositphotos-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
