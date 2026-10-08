@@ -95,3 +95,48 @@ plans:
       - License transfer capabilities
       - Dedicated enterprise support
       - AI Image Generation access
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  - subscription
+  units: []
+  plans:
+  - name: Free Basic
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Intermediate
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Advanced 75
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Advanced 150
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Advanced 500
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Enterprise
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
