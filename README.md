@@ -64,31 +64,148 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Depositphotos is a stock photo, vector, and video marketplace offering a REST API for searching and downloading images, managing subscriptions, lightboxes, and contributor portfolios. The platform hosts 331M+ creative assets and provides APIs for partners, resellers, enterprises, and suite integrations including generative AI tools.
+Depositphotos is a stock photo, vector, and video marketplace offering a REST API for searching and downloading images, managing subscriptions, lightboxes, and contributor portfolios. The API supports Partner and Reseller programs, an Enterprise solution with advanced licensing and invoicing, and an AI Suite for generative image creation and graphic editing. All API calls use HTTP GET/POST requests with JSON responses and session-based authentication.
 
-## APIs
+**Areas:** Stock Photos · Image · Video · Vectors · Media · Creative Assets · Generative AI
 
-| API | Description |
-|-----|-------------|
-| [Partner API](https://api.depositphotos.com/doc/) | Search the catalog, preview assets, and earn referral revenue |
-| [Enterprise API](https://enterprise-api-doc.readthedocs.io/) | Full licensing workflows, invoice management, license transfer, and AI image generation |
-| [Suite API](https://api.depositphotos.com/suite/api-reference/vista-create-editor) | Graphic editor, stock library, and generative AI tools bundled for embedding |
+## Depositphotos on APIs.io
 
-## Authentication
+Everything profiled for Depositphotos is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/depositphotos/](https://apis.io/providers/depositphotos/)** — or go straight to one of the APIs or properties below.
 
-All APIs use an API key (`dp_apikey`) plus a session token (`dp_sessionid`) obtained by calling the `login` or `loginEnterprise` endpoint. Sessions are valid for three hours; automated re-login is recommended.
+### APIs (3)
 
-## Resources
+- [Depositphotos Enterprise API](https://apis.io/apis/depositphotos/depositphotos-enterprise-api/) — The Enterprise API provides organizations with full content licensing workflows including searching 331M+ assets, licensing items, invoice management,…
+- [Depositphotos Suite API](https://apis.io/apis/depositphotos/depositphotos-suite-api/) — The Depositphotos Suite API bundles a graphic design editor, access to the 331M+ stock library, and generative AI tools (AI Assistant, AI Image Generator)…
+- [Depositphotos Authentication API](https://apis.io/apis/depositphotos/depositphotos-authentication-api/) — The Authentication API from Depositphotos — 1 operation(s) for authentication.
 
-- **Website**: https://depositphotos.com
-- **API Documentation**: https://api.depositphotos.com/doc/
-- **Enterprise API Docs**: https://enterprise-api-doc.readthedocs.io/
-- **API Plans**: https://depositphotos.com/api-plans.html
-- **API Agreement**: https://depositphotos.com/api-agreement.html
-- **Blog**: https://blog.depositphotos.com
-- **X (Twitter)**: https://x.com/depositphotos
-- **LinkedIn**: https://www.linkedin.com/company/depositphotos
+### Published properties
 
-## Maintainer
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Kin Lane — kin@apievangelist.com
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Depositphotos Agentic Access](https://apis.io/agentic-access/depositphotos/depositphotos-agentic-access/)
+
+#### JSON Schema (3)
+
+The data models the API reads and writes.
+
+- [APIResponse](https://apis.io/schemas/depositphotos/api-response/)
+- [MediaItem](https://apis.io/schemas/depositphotos/media-item/)
+- [SearchRequest](https://apis.io/schemas/depositphotos/search-request/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Depositphotos Context](https://apis.io/jsonld/depositphotos/depositphotos/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [License Item Enterprise](https://apis.io/examples/depositphotos/license-item-enterprise/)
+- [Login Request](https://apis.io/examples/depositphotos/login-request/)
+- [Search Request](https://apis.io/examples/depositphotos/search-request/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Depositphotos Enterprise Authentication API](https://apis.io/collections/depositphotos/open-depositphotos-authentication-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Depositphotos — jsonschema rules](https://apis.io/rules/depositphotos/depositphotos-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Depositphotos Authentication](https://apis.io/security/depositphotos/depositphotos-authentication/)
+- [Depositphotos Domain Security](https://apis.io/security/depositphotos/depositphotos-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Depositphotos Plans Pricing](https://apis.io/plans/depositphotos/depositphotos-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Depositphotos Rate Limits](https://apis.io/rate-limits/depositphotos/depositphotos-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Depositphotos Finops](https://apis.io/finops/depositphotos/depositphotos-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://depositphotos.com)
+- [Documentation](https://api.depositphotos.com/doc/)
+- [Pricing](https://depositphotos.com/api-plans.html)
+- [Blog](https://blog.depositphotos.com)
+- [Status](https://depositphotos.com/status)
+
+## API Evangelist rating
+
+**Kin Score 31.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 48.7 |
+| Contract governance | 9.8 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 18.4 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.5** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/depositphotos/](https://apis.io/providers/depositphotos/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Depositphotos: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/depositphotos/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
